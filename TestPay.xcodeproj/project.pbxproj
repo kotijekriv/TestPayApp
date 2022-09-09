@@ -7,31 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28047AD328C87BF200A98813 /* ShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28047AD228C87BF200A98813 /* ShopView.swift */; };
 		287E800A28C3526100F850EA /* PurchasedItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287E800928C3526100F850EA /* PurchasedItemView.swift */; };
 		288AC4C028BD424E001F4E89 /* TestPayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288AC4BF28BD424E001F4E89 /* TestPayApp.swift */; };
-		288AC4C228BD424E001F4E89 /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288AC4C128BD424E001F4E89 /* StoreView.swift */; };
+		288AC4C228BD424E001F4E89 /* StockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288AC4C128BD424E001F4E89 /* StockView.swift */; };
 		288AC4C428BD424F001F4E89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 288AC4C328BD424F001F4E89 /* Assets.xcassets */; };
 		288AC4C728BD424F001F4E89 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 288AC4C628BD424F001F4E89 /* Preview Assets.xcassets */; };
-		2893BC7328C0B3CB00FBB553 /* NonConsumableItemShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893BC7228C0B3CB00FBB553 /* NonConsumableItemShopView.swift */; };
-		2893BC7528C0B3ED00FBB553 /* AutoRenewableSubsShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893BC7428C0B3ED00FBB553 /* AutoRenewableSubsShopView.swift */; };
-		2893BC7728C0B3F800FBB553 /* NonRenewingSubsShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893BC7628C0B3F800FBB553 /* NonRenewingSubsShopView.swift */; };
 		28A110A528BE6D61007BF47E /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A110A428BE6D61007BF47E /* Store.swift */; };
 		28AAE84228BFC2E3007D25B3 /* ConsumableItemShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AAE84128BFC2E3007D25B3 /* ConsumableItemShopView.swift */; };
+		28EBB8D428C6235F00F3A5CA /* Testclass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EBB8D328C6235F00F3A5CA /* Testclass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		28047AD228C87BF200A98813 /* ShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopView.swift; sourceTree = "<group>"; };
 		287E800928C3526100F850EA /* PurchasedItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasedItemView.swift; sourceTree = "<group>"; };
 		288AC4BC28BD424E001F4E89 /* TestPay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestPay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		288AC4BF28BD424E001F4E89 /* TestPayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPayApp.swift; sourceTree = "<group>"; };
-		288AC4C128BD424E001F4E89 /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
+		288AC4C128BD424E001F4E89 /* StockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockView.swift; sourceTree = "<group>"; };
 		288AC4C328BD424F001F4E89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		288AC4C628BD424F001F4E89 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		2893BC7228C0B3CB00FBB553 /* NonConsumableItemShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonConsumableItemShopView.swift; sourceTree = "<group>"; };
-		2893BC7428C0B3ED00FBB553 /* AutoRenewableSubsShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoRenewableSubsShopView.swift; sourceTree = "<group>"; };
-		2893BC7628C0B3F800FBB553 /* NonRenewingSubsShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonRenewingSubsShopView.swift; sourceTree = "<group>"; };
 		28A110A428BE6D61007BF47E /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		28A110A628BE809F007BF47E /* Products.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Products.storekit; sourceTree = "<group>"; };
 		28AAE84128BFC2E3007D25B3 /* ConsumableItemShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumableItemShopView.swift; sourceTree = "<group>"; };
+		28EBB8D328C6235F00F3A5CA /* Testclass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testclass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,12 +64,13 @@
 			children = (
 				28AAE84028BFC1D4007D25B3 /* InAppPurchaseViews */,
 				288AC4BF28BD424E001F4E89 /* TestPayApp.swift */,
-				288AC4C128BD424E001F4E89 /* StoreView.swift */,
+				288AC4C128BD424E001F4E89 /* StockView.swift */,
 				287E800928C3526100F850EA /* PurchasedItemView.swift */,
 				28A110A428BE6D61007BF47E /* Store.swift */,
+				28EBB8D328C6235F00F3A5CA /* Testclass.swift */,
 				288AC4C328BD424F001F4E89 /* Assets.xcassets */,
-				288AC4C528BD424F001F4E89 /* Preview Content */,
 				28A110A628BE809F007BF47E /* Products.storekit */,
+				288AC4C528BD424F001F4E89 /* Preview Content */,
 			);
 			path = TestPay;
 			sourceTree = "<group>";
@@ -88,9 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				28AAE84128BFC2E3007D25B3 /* ConsumableItemShopView.swift */,
-				2893BC7228C0B3CB00FBB553 /* NonConsumableItemShopView.swift */,
-				2893BC7428C0B3ED00FBB553 /* AutoRenewableSubsShopView.swift */,
-				2893BC7628C0B3F800FBB553 /* NonRenewingSubsShopView.swift */,
+				28047AD228C87BF200A98813 /* ShopView.swift */,
 			);
 			path = InAppPurchaseViews;
 			sourceTree = "<group>";
@@ -167,12 +164,11 @@
 			files = (
 				287E800A28C3526100F850EA /* PurchasedItemView.swift in Sources */,
 				28A110A528BE6D61007BF47E /* Store.swift in Sources */,
-				288AC4C228BD424E001F4E89 /* StoreView.swift in Sources */,
-				2893BC7528C0B3ED00FBB553 /* AutoRenewableSubsShopView.swift in Sources */,
+				288AC4C228BD424E001F4E89 /* StockView.swift in Sources */,
 				28AAE84228BFC2E3007D25B3 /* ConsumableItemShopView.swift in Sources */,
 				288AC4C028BD424E001F4E89 /* TestPayApp.swift in Sources */,
-				2893BC7728C0B3F800FBB553 /* NonRenewingSubsShopView.swift in Sources */,
-				2893BC7328C0B3CB00FBB553 /* NonConsumableItemShopView.swift in Sources */,
+				28047AD328C87BF200A98813 /* ShopView.swift in Sources */,
+				28EBB8D428C6235F00F3A5CA /* Testclass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

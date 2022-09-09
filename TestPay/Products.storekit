@@ -1,15 +1,241 @@
 {
+  "identifier" : "AC919B69",
+  "nonRenewingSubscriptions" : [
+    {
+      "displayPrice" : "7.99",
+      "familyShareable" : false,
+      "internalID" : "EBABDF25",
+      "localizations" : [
+        {
+          "description" : "Servis za sve lokomotive Ljeto '22",
+          "displayName" : "Servis Ljeto '22",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.testPay.summer22",
+      "referenceName" : "Servis Ljeto '22",
+      "type" : "NonRenewingSubscription"
+    },
+    {
+      "displayPrice" : "7.99",
+      "familyShareable" : false,
+      "internalID" : "BF1E537E",
+      "localizations" : [
+        {
+          "description" : "Servis za sve lokomotive Jesen '22",
+          "displayName" : "Servis Jesen '22",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.testPay.fall22",
+      "referenceName" : "Servis Jesen '22",
+      "type" : "NonRenewingSubscription"
+    },
+    {
+      "displayPrice" : "7.99",
+      "familyShareable" : false,
+      "internalID" : "A7FE6453",
+      "localizations" : [
+        {
+          "description" : "Servis za sve lokomotive Zima '23",
+          "displayName" : "Servis Zima '23",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.testPay.winter23",
+      "referenceName" : "Servis Zima '23",
+      "type" : "NonRenewingSubscription"
+    }
+  ],
   "products" : [
-
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "994756C0",
+      "localizations" : [
+        {
+          "description" : "Vagon ugljena za parne lokomotive",
+          "displayName" : "Ugljen",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.testPay.coal",
+      "referenceName" : "Ugljen",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "E46C3CD0",
+      "localizations" : [
+        {
+          "description" : "Cisterna dizela za dizel lokomotive",
+          "displayName" : "Dizel",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.testPay.disel",
+      "referenceName" : "Dizel",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "2.99",
+      "familyShareable" : false,
+      "internalID" : "3F822764",
+      "localizations" : [
+        {
+          "description" : "Cisterna benzina za benzinske lokomotive",
+          "displayName" : "Benzin",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.testPay.petrol",
+      "referenceName" : "Benzin",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "3.99",
+      "familyShareable" : false,
+      "internalID" : "0734ADE9",
+      "localizations" : [
+        {
+          "description" : "Lokomotiva koja ide do 50 km/h",
+          "displayName" : "Parna lokomotiva",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.testPay.steamEngine",
+      "referenceName" : "Parna lokomotiva",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "18EBA3B3",
+      "localizations" : [
+        {
+          "description" : "Lokomotiva koja ide do 100 km/h",
+          "displayName" : "Dizel lokomotiva",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.testPay.diselEngine",
+      "referenceName" : "Dizel lokomotiva",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "5.99",
+      "familyShareable" : false,
+      "internalID" : "6DA641B3",
+      "localizations" : [
+        {
+          "description" : "Lokomotiva koja ide do 160 km/h",
+          "displayName" : "Benzin lokomotiva",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.testPay.petrolEngine",
+      "referenceName" : "Benzin lokomotiva",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "6.99",
+      "familyShareable" : false,
+      "internalID" : "4A53540E",
+      "localizations" : [
+        {
+          "description" : "Lokomotiva koja ide do 300 km/h",
+          "displayName" : "Električna lokomotiva",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.testPay.electricEngine",
+      "referenceName" : "Električna lokomotiva",
+      "type" : "NonConsumable"
+    }
   ],
   "settings" : {
 
   },
   "subscriptionGroups" : [
+    {
+      "id" : "44064351",
+      "localizations" : [
 
+      ],
+      "name" : "Struja",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "displayPrice" : "4.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "61311FFA",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Omogućeno putovanje do 140 km/h",
+              "displayName" : "Struja Basic",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.testPay.electric.basic",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Basic",
+          "subscriptionGroupID" : "44064351",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "displayPrice" : "5.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "E558DB4A",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Omogućeno putovanje do 200 km/h",
+              "displayName" : "Struja Pro",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.testPay.electric.pro",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Pro",
+          "subscriptionGroupID" : "44064351",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "displayPrice" : "6.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "65E9278B",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Omogućeno putovanje do 300 km/h",
+              "displayName" : "Struja Max",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.testPay.electric.max",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Max",
+          "subscriptionGroupID" : "44064351",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
   ],
   "version" : {
     "major" : 1,
-    "minor" : 0
+    "minor" : 1
   }
 }

@@ -11,7 +11,7 @@ import SwiftUI
 struct TestPayApp: App {
     var body: some Scene {
         WindowGroup {
-            StoreView()
+            StockView()
         }
     }
 }

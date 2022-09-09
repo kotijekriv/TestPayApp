@@ -23,7 +23,10 @@ class Store: ObservableObject {
     
     init() {
         if productIdAndEmoji.isEmpty {
-            productIdAndEmoji = ["TestPay.steamTrain" : ""]
+            productIdAndEmoji = ["com.testPay.coal": "🪵","com.testPay.disel": "⛽️","com.testPay.petrol": "⛽️"
+                                 ,"com.testPay.steamEngine": "🚂","com.testPay.diselEngine": "🚈","com.testPay.petrolEngine": "🚅","com.testPay.electricEngine": "🚄"
+                                 ,"com.testPay.summer22": "🛠","com.testPay.fall22": "🛠","com.testPay.winter23": "🛠"
+                                 ,"com.testPay.electric.basic": "♻️","com.testPay.electric.pro": "⚡️","com.testPay.electric.max": "⚡️⚡️"]
         }
         
         Task {
@@ -32,16 +35,17 @@ class Store: ObservableObject {
         }
     }
     
+    @MainActor
     func fetchProducts() async {
         do {
-            let storeProducts = try await Product.products(for: productIdAndEmoji.keys)
+            let productsFromStore  = try await Product.products(for: productIdAndEmoji.keys)
             
             var newNonConsumableItems: [Product] = []
             var newConsumableItems: [Product] = []
             var newSubscriptions: [Product] = []
             var newNonRenewables: [Product] = []
             
-            for product in storeProducts {
+            for product in productsFromStore  {
                 switch product.type {
                 case .nonConsumable:
                     newNonConsumableItems.append(product)
@@ -56,10 +60,10 @@ class Store: ObservableObject {
                 }
             }
             
-            nonConsumableItems = newNonConsumableItems
-            consumableItems = newConsumableItems
-            autoRenewableSubs = newSubscriptions
-            nonRenewableSubs = newNonRenewables
+            self.nonConsumableItems = newNonConsumableItems
+            self.consumableItems = newConsumableItems
+            self.autoRenewableSubs = newSubscriptions
+            self.nonRenewableSubs = newNonRenewables
             
         } catch {
             print("Error fetching products from AppStore: \(error)")
@@ -67,6 +71,7 @@ class Store: ObservableObject {
         
     }
     
+    @MainActor
     func updateAllProductsStates() async {
         var purchasedNonConsumableItems: [Product] = []
         var purchasedNonRenewableSubs: [Product] = []
@@ -90,7 +95,6 @@ class Store: ObservableObject {
                 case .nonRenewable:
                     if let nonRenewableSub = nonRenewableSubs.first(where: { $0.id == transaction.productID }) {
                         purchasedNonRenewableSubs.append(nonRenewableSub)
-                        
                     }
                 default:
                     break
@@ -147,4 +151,7 @@ class Store: ObservableObject {
         }
     }
     
+    func getEmojiFromProductId(_ id: String) -> String{
+        return productIdAndEmoji[id] ?? "❓"
+    }
 }
