@@ -17,12 +17,12 @@ struct ShopView: View {
         switch productType {
         case .nonConsumable:
             return store.nonConsumableItems
+        case .consumable:
+            return store.consumableItems
         case .autoRenewable:
             return store.autoRenewableSubs
         case .nonRenewable:
-            return store.autoRenewableSubs
-        default:
-            return []
+            return store.nonRenewableSubs
         }
     }
     
@@ -32,23 +32,23 @@ struct ShopView: View {
     }
     
     var body: some View {
-List {
-    ForEach(arrayOfProducts){ item in
-        HStack{
-            Text(store.getEmojiFromProductId(item.id))
-                .font(.system(size: 50))
-            Text(item.displayName)
-                .padding()
-            Spacer()
-            Button(store.isPurchased(item) ? "Kupljeno!" : "Kupi za \n(\(item.displayPrice))") {
-                if !store.isPurchased(item) {
-                    store.purchase(item)
+        List {
+            ForEach(arrayOfProducts){ item in
+                HStack{
+                    Text(store.getEmojiFromProductId(item.id))
+                        .font(.system(size: 50))
+                    Text(item.displayName)
+                        .padding()
+                    Spacer()
+                    Button(store.isPurchased(item) ? "Kupljeno!" : "Kupi za \n(\(item.displayPrice))") {
+                        if !store.isPurchased(item) {
+                            store.purchase(item)
+                        }
+                    }
                 }
             }
         }
-    }
-}
-.navigationTitle(shopTitle)
+        .navigationTitle(shopTitle)
         
     }
 }

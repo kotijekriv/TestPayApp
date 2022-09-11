@@ -12,88 +12,92 @@ struct StockView: View {
     @StateObject var store: Store = Store()
     
     var body: some View {
-NavigationView{
-    VStack{
-        
-        List {
-            Section("Vlakovi") {
-                ForEach(store.purchasedNonConsumableItems) { item in
-                    NavigationLink (item.displayName) {
-                        PurchasedItemView(name: item.displayName,
-                                          description: item.description,
-                                          emoji: store.getEmojiFromProductId(item.id))
+        NavigationView{
+            VStack{
+                
+                List {
+                    Section("Vlakovi") {
+                        ForEach(store.purchasedNonConsumableItems) { item in
+                            NavigationLink (item.displayName) {
+                                PurchasedItemView(name: item.displayName,
+                                                  description: item.description,
+                                                  emoji: store.getEmojiFromProductId(item.id))
+                            }
+                        }
+                    }
+                    
+                    Section("Pogonsko gorivo") {
+                        ForEach(store.consumableItems) { item in
+                            HStack{
+                                Text(item.displayName)
+                                Spacer()
+                                Text("\(store.getQuantityFor(productId: item.id))")
+                            }
+                        }
+                    }
+                    
+                    Section("Pretplata za struju") {
+                        ForEach(store.purchasedAutoRenewableSubs) { item in
+                            NavigationLink (item.displayName) {
+                                PurchasedItemView(name: item.displayName,
+                                                  description: item.description,
+                                                  emoji: store.getEmojiFromProductId(item.id))
+                            }
+                        }
+                    }
+                    
+                    Section("Pretplata za servis") {
+                        ForEach(store.purchasedNonRenewableSubs) { item in
+                            NavigationLink (item.displayName) {
+                                PurchasedItemView(name: item.displayName,
+                                                  description: item.description,
+                                                  emoji: store.getEmojiFromProductId(item.id))
+                            }
+                        }
+                    }
+                }
+                
+                VStack{
+                    
+                    Text("Trgovina")
+                    
+                    HStack {
+                        NavigationLink {
+                            ShopView(for: .nonConsumable,
+                                        withTitle: "Trgovina vlakova")
+                        } label: {
+                            Label("Vlakovi", systemImage: "cart")
+                        }.padding()
+                        
+                        Spacer()
+                        
+                        NavigationLink {
+                            ShopView(for: .autoRenewable,
+                                        withTitle: "Elektroprivreda")
+                        } label: {
+                            Label("Struja", systemImage: "cart")
+                        }.padding()
+                    }
+                    HStack {
+                        NavigationLink {
+                            ShopView(for: .consumable,
+                                        withTitle: "Dobavljač goriva")
+                        } label: {
+                            Label("Gorivo", systemImage: "cart")
+                        }.padding()
+                        
+                        Spacer()
+                        
+                        NavigationLink {
+                            ShopView(for: .nonRenewable,
+                                        withTitle: "Serviser vlakova")
+                        } label: {
+                            Label("Servis", systemImage: "cart")
+                        }.padding()
                     }
                 }
             }
-            
-            Section("Pogonsko gorivo") {
-                NavigationLink ("Kupljeni artikl") {
-                    PurchasedItemView()
-                }
-            }
-            
-            Section("Pretplata za struju") {
-                ForEach(store.purchasedAutoRenewableSubs) { item in
-                    NavigationLink (item.displayName) {
-                        PurchasedItemView(name: item.displayName,
-                                          description: item.description,
-                                          emoji: store.getEmojiFromProductId(item.id))
-                    }
-                }
-            }
-            
-            Section("Pretplata za servis") {
-                ForEach(store.purchasedNonRenewableSubs) { item in
-                    NavigationLink (item.displayName) {
-                        PurchasedItemView(name: item.displayName,
-                                          description: item.description,
-                                          emoji: store.getEmojiFromProductId(item.id))
-                    }
-                }
-            }
-        }
-        
-        VStack{
-            
-            Text("Trgovina")
-            
-            HStack {
-                NavigationLink {
-                    ShopView(for: .nonConsumable,
-                                withTitle: "Trgovina vlakova")
-                } label: {
-                    Label("Vlakovi", systemImage: "cart")
-                }.padding()
-                
-                Spacer()
-                
-                NavigationLink {
-                    ShopView(for: .autoRenewable,
-                                withTitle: "Elektroprivreda")
-                } label: {
-                    Label("Struja", systemImage: "cart")
-                }.padding()
-            }
-            HStack {
-                NavigationLink {
-                    ShopView(for: .consumable,
-                                withTitle: "Dobavljač goriva")
-                } label: {
-                    Label("Gorivo", systemImage: "cart")
-                }.padding()
-                
-                Spacer()
-                
-                NavigationLink {
-                    ShopView(for: .nonRenewable,
-                                withTitle: "Serviser vlakova")
-                } label: {
-                    Label("Servis", systemImage: "cart")
-                }.padding()
-            }
-        }
-    }
-    .navigationTitle("Skladište")
+            .navigationTitle("Skladište")
         }
         .environmentObject(store)
     }

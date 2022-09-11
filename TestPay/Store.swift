@@ -19,19 +19,18 @@ class Store: ObservableObject {
     @Published private(set) var purchasedAutoRenewableSubs: [Product] = []
     @Published private(set) var purchasedNonRenewableSubs: [Product] = []
     
+    private var purchasedConsumables: [String : Int] = [:]
     private var productIdAndEmoji: [String : String] = [:]
     
     init() {
         if productIdAndEmoji.isEmpty {
-            productIdAndEmoji = ["com.testPay.coal": "🪵","com.testPay.disel": "⛽️","com.testPay.petrol": "⛽️"
-                                 ,"com.testPay.steamEngine": "🚂","com.testPay.diselEngine": "🚈","com.testPay.petrolEngine": "🚅","com.testPay.electricEngine": "🚄"
-                                 ,"com.testPay.summer22": "🛠","com.testPay.fall22": "🛠","com.testPay.winter23": "🛠"
-                                 ,"com.testPay.electric.basic": "♻️","com.testPay.electric.pro": "⚡️","com.testPay.electric.max": "⚡️⚡️"]
+            productIdAndEmoji = ["com.testPay.coal": "🪵","com.testPay.disel": "⛽️","com.testPay.petrol": "⛽️","com.testPay.steamEngine": "🚂","com.testPay.diselEngine": "🚈","com.testPay.petrolEngine": "🚅","com.testPay.electricEngine": "🚄","com.testPay.summer22": "🛠","com.testPay.fall22": "🛠","com.testPay.winter23": "🛠","com.testPay.electric.basic": "♻️","com.testPay.electric.pro": "⚡️","com.testPay.electric.max": "⚡️⚡️"]
         }
         
         Task {
             await fetchProducts()
             await updateAllProductsStates()
+            updatePurchasedConsumable()
         }
     }
     
@@ -124,6 +123,10 @@ class Store: ObservableObject {
                     
                     await updateAllProductsStates()
                     
+                    if transaction.productType == .consumable {
+                        addQuantityForConsumable(itemId: transaction.productID)
+                    }
+                    
                     await transaction.finish()
                     
                 case .unverified(_,_):
@@ -151,7 +154,27 @@ class Store: ObservableObject {
         }
     }
     
+    func updatePurchasedConsumable() {
+        let defaults = UserDefaults.standard
+        for product in self.consumableItems {
+            let number = defaults.integer(forKey: product.id)
+            purchasedConsumables[product.id] = number
+        }
+    }
+    
+    func addQuantityForConsumable(itemId: String) {
+        let defaults = UserDefaults.standard
+        let oldValue = defaults.integer(forKey: itemId)
+        let newValue = oldValue + 10
+        defaults.set(newValue, forKey: itemId)
+        purchasedConsumables[itemId] = newValue
+    }
+    
     func getEmojiFromProductId(_ id: String) -> String{
         return productIdAndEmoji[id] ?? "❓"
+    }
+    
+    func getQuantityFor(productId id: String) -> Int {
+        return purchasedConsumables[id] ?? 0
     }
 }
